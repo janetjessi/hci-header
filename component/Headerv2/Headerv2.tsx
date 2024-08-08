@@ -407,43 +407,38 @@ const Headerv2 = () => {
 
                           <div>
                             <p className="bg-gray-300 p-[20px] text-black uppercase text-paralarge font-bold">
-                              Article
+                              Topics
                             </p>
                             <div className="bg-white m-[20px] mb-[40px]">
-                              <a
-                                className="bg-hoverGrey p-[10px] flex flex-row items-center gap-[20px] mb-[20px]"
-                                href="/#"
-                              >
-                                <div className="text-darkGrey font-bold text-para uppercase flex-grow">
-                                  Find a Uni
-                                </div>
-                                <div>
-                                  <Image
-                                    alt=""
-                                    width="80"
-                                    height="40"
-                                    className="object-cover w-[60px] h-[60px] rounded-[50%]"
-                                    src="/article1.jpg"
-                                  />
-                                </div>
-                              </a>
-                              <a
-                                className="bg-hoverGrey p-[10px] flex flex-row items-center gap-[20px] mb-[20px]"
-                                href="/#"
-                              >
-                                <div className="text-darkGrey font-bold text-para uppercase flex-grow">
-                                  Uni Ranking
-                                </div>
-                                <div>
-                                  <Image
-                                    alt=""
-                                    width="80"
-                                    height="40"
-                                    className="object-cover w-[60px] h-[60px] rounded-[50%]"
-                                    src="/article2.jpg"
-                                  />
-                                </div>
-                              </a>
+                              {[
+                                { name: "Australia", imgUrl: "/country1.jpg" },
+                                {
+                                  name: "Canada",
+                                  imgUrl: "/country2.jpg",
+                                },
+                                {
+                                  name: "New Zealand",
+                                  imgUrl: "/country3.jpg",
+                                },
+                              ].map((uni: any) => (
+                                <a
+                                  className="bg-hoverGrey p-[10px] flex flex-row items-center gap-[20px] mb-[20px]"
+                                  href="/#"
+                                >
+                                  <div className="text-darkGrey font-bold text-para uppercase flex-grow">
+                                    {uni.name}
+                                  </div>
+                                  <div>
+                                    <Image
+                                      alt=""
+                                      width="80"
+                                      height="40"
+                                      className="object-cover w-[60px] h-[60px] rounded-[50%]"
+                                      src={uni.imgUrl}
+                                    />
+                                  </div>
+                                </a>
+                              ))}
                             </div>
                           </div>
                         </div>
@@ -921,30 +916,38 @@ const Headerv2 = () => {
                   {/* Article */}
                   <div className="col-span-1 px-[30px]">
                     <p className="uppercase mb-4 text-xs text-darkGrey pb-2 text-para font-bold">
-                      Article
+                      Topics
                     </p>
                     <ul className="flex flex-col text-mediumGrey text-base">
-                      {["Find a uni", "Uni ranking", "Uni Prospectus"].map(
-                        (uni) => (
-                          <li className="py-[5px]">
-                            <a
-                              className="relative p-[20px] flex flex-col items-center justify-center h-[145px] mb-[20px]"
-                              href="/#"
-                            >
-                              <div className="text-white text-para font-bold uppercase text-center relative z-20">
-                                {uni}
-                              </div>
-                              <Image
-                                alt=""
-                                width="270"
-                                height="141"
-                                className="object-cover w-full h-full absolute rounded-[5px]"
-                                src="/article2.jpg"
-                              />
-                            </a>
-                          </li>
-                        )
-                      )}
+                      {[
+                        { name: "Australia", imgUrl: "/country1.jpg" },
+                        {
+                          name: "Canada",
+                          imgUrl: "/country2.jpg",
+                        },
+                        {
+                          name: "New Zealand",
+                          imgUrl: "/country3.jpg",
+                        },
+                      ].map((uni: any) => (
+                        <li className="py-[5px]">
+                          <a
+                            className="relative p-[20px] flex flex-col items-center justify-center h-[145px] mb-[20px]"
+                            href="/#"
+                          >
+                            <div className="text-white text-para font-bold uppercase text-center relative z-20">
+                              {uni.name}
+                            </div>
+                            <Image
+                              alt=""
+                              width="270"
+                              height="141"
+                              className="object-cover w-full h-full absolute rounded-[5px]"
+                              src={uni.imgUrl}
+                            />
+                          </a>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
